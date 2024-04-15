@@ -1,0 +1,17 @@
+# 2. Python Data Structure Challenges in Real-World Scenarios
+
+library = [("1984", "George Orwell"), ("Brave New World", "Aldous Huxley")]
+
+def add_book(title, author):
+    new_book = (title, author)
+    if new_book in library:
+        print("This book already exists in the library.")
+    else:
+        library.append(new_book)
+        print("Book added successfully to the library.")
+
+# Test the function with a new book
+add_book("The Catcher in the Rye", "J.D. Salinger")
+
+# Try adding a duplicate book
+add_book("1984", "George Orwell")

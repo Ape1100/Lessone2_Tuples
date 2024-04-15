@@ -1,0 +1,38 @@
+#3. Python Loops and Tuples in Analytical Applications
+
+#Problem Statement:
+#Analyze the data to find the average closing price of a specified stock over a given period
+
+
+#analysis
+
+stock_data = [
+    ("AAPL", "2021-01-01", 130.0),
+    ("AAPL", "2021-01-02", 132.0),
+    ("MSFT", "2021-01-01", 220.0),
+    # More data...
+]
+
+def calculate_average_closing_price(stock_data, stock_symbol, start_date, end_date):
+    total_closing_price = 0
+    num_data_points = 0
+    
+    for data_point in stock_data:
+        symbol, date, closing_price = data_point
+        if symbol == stock_symbol and start_date <= date <= end_date:
+            total_closing_price += closing_price
+            num_data_points += 1
+    
+    average_closing_price = total_closing_price / num_data_points
+    return average_closing_price
+
+# Test 
+stock_symbol = "AAPL"
+start_date = "2021-01-01"
+end_date = "2021-01-02"
+average_price = calculate_average_closing_price(stock_data, stock_symbol, start_date, end_date)
+
+if average_price is not None:
+    print(f"Average closing price of {stock_symbol} from {start_date} to {end_date}: {average_price}")
+else:
+    print(f"No data found for {stock_symbol} from {start_date} to {end_date}")
